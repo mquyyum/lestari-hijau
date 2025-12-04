@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <title>Green Energy for Rural Future</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --madani-blue: #0b4f6c;
+      --jkr-yellow: #ffcc00;
+      --energy-green: #1faa59;
+      --dark: #102a43;
+      --light-bg: #f5f7fa;
+      --text-main: #243b53;
+      --text-muted: #627d98;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      color: var(--text-main);
+      background: var(--light-bg);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 79, 108, 0.97);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--jkr-yellow), var(--energy-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--dark);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--energy-green), #34c471);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(31, 170, 89, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(31, 170, 89, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #0f8ecf 0, #0b4f6c 42%, #061826 100%);
+      color: var(--white);
+      padding: 4.5rem 1.25rem 4rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 999px;
+      padding: 0.15rem 0.75rem 0.15rem 0.25rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-tag-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #ffcc00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #0b4f6c;
+      margin-right: 0.1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+
+    .hero h1 span {
+      color: var(--jkr-yellow);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      max-width: 520px;
+      color: rgba(241, 250, 255, 0.9);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(226, 240, 255, 0.8);
+    }
+
+    .hero-meta-item span {
+      display: block;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
+      font-size: 0.74rem;
+    }
+
+    .hero-meta-value {
+      font-weight: 500;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-panel {
+      background: rgba(6, 24, 38, 0.92);
+      border-radius: 18px;
+      padding: 1.1rem 1.1rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.7rem;
+      font-size: 0.8rem;
+      color: rgba(226, 240, 255, 0.85);
+    }
+
+    .hero-panel-title {
+      font-weight: 500;
+    }
+
+    .hero-panel-badge {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.78rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-kpi-card {
+      background: radial-gradient(circle at top left, rgba(27, 216, 108, 0.22), rgba(10, 37, 64, 0.95));
+      border-radius: 12px;
+      padding: 0.6rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-kpi-label {
+      opacity: 0.74;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-kpi-value {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #e6fffa;
+    }
+
+    .hero-kpi-footnote {
+      font-size: 0.7rem;
+      opacity: 0.75;
+      margin-top: 0.2rem;
+    }
+
+    .hero-mini-chart {
+      margin-top: 0.4rem;
+      height: 34px;
+      background: linear-gradient(to top, rgba(31, 170, 89, 0.4), rgba(31, 170, 89, 0));
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-mini-chart::before {
+      content: "";
+      position: absolute;
+      inset: 18% 0 0 0;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 18px 100%;
+      opacity: 0.4;
+    }
+
+    .hero-mini-chart::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.22) 45%, rgba(255, 255, 255, 0) 100%);
+      transform: translateX(-40%);
+      filter: blur(8px);
+      opacity: 0.45;
+    }
+
+    .hero-panel-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: rgba(226, 240, 255, 0.8);
+      margin-top: 0.4rem;
+    }
+
+    .hero-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.28);
+      margin-right: 0.3rem;
+      display: inline-block;
+    }
+
+    .hero-pill {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 118, 230, 0.18);
+      border: 1px solid rgba(125, 211, 252, 0.3);
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--energy-green);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 580px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .pillar-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #d8e2ec;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .pillar-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(11, 79, 108, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--madani-blue);
+    }
+
+    .pillar-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.98rem;
+    }
+
+    .pillar-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .badge-soft {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(11, 79, 108, 0.06);
+      color: var(--madani-blue);
+      margin-bottom: 0.35rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #d8e2ec;
+      margin-bottom: 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      color: var(--dark);
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.76rem;
+    }
+
+    .tag {
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      background: #f0f4f8;
+      color: #52606d;
+    }
+
+    .dashboard-card {
+      background: #0b4f6c;
+      color: var(--white);
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem 1.3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-chart {
+      height: 130px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(31, 170, 89, 0.15), rgba(15, 118, 230, 0.15));
+      border: 1px solid rgba(226, 232, 240, 0.3);
+      margin-top: 0.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-chart::before {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: -15%;
+      height: 70%;
+      background: radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.7) 0, transparent 55%),
+        radial-gradient(circle at 60% 0%, rgba(34, 197, 94, 0.8) 0, transparent 60%),
+        radial-gradient(circle at 95% 30%, rgba(250, 204, 21, 0.8) 0, transparent 55%);
+      opacity: 0.9;
+    }
+
+    .chart-overlay-lines {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(to top, rgba(148, 163, 184, 0.3) 1px, transparent 1px);
+      background-size: 34px 100%, 100% 28px;
+      opacity: 0.4;
+    }
+
+    .dashboard-kpi-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+    }
+
+    .dashboard-kpi {
+      flex: 1;
+    }
+
+    .dashboard-kpi-label {
+      opacity: 0.8;
+      margin-bottom: 0.15rem;
+    }
+
+    .dashboard-kpi-value {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .info-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .info-list li {
+      margin-bottom: 0.35rem;
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .info-bullet {
+      margin-top: 0.25rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--energy-green);
+      flex-shrink: 0;
+    }
+
+    .highlight-strip {
+      background: linear-gradient(90deg, rgba(11, 79, 108, 0.04), rgba(31, 170, 89, 0.04));
+      border-radius: 12px;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      margin-top: 0.75rem;
+    }
+
+    .highlight-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: var(--energy-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--white);
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .quote-block {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid #d8e2ec;
+      font-size: 0.95rem;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      color: #334e68;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.18);
+    }
+
+    .quote-mark {
+      font-size: 2rem;
+      color: var(--energy-green);
+      margin-bottom: 0.2rem;
+    }
+
+    .quote-author {
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #0b4f6c, #1faa59);
+      border-radius: 18px;
+      padding: 1.7rem 1.4rem 1.8rem;
+      color: var(--white);
+      max-width: 780px;
+      margin: 0 auto;
+      box-shadow: 0 18px 36px rgba(15, 118, 230, 0.45);
+    }
+
+    .cta-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-text {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 1.4rem 1.25rem 1.6rem;
+      background: #0b1727;
+      color: rgba(226, 232, 240, 0.8);
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .hero-inner,
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      nav ul {
+        display: none; /* simple: hide nav items on mobile (boleh tambah burger menu kalau perlu) */
+      }
+
+      header {
+        position: static;
+      }
+
+      .hero {
+        padding-top: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-mark">GE</div>
+        <div>
+          <div style="font-size: 0.9rem;">Green Energy</div>
+          <div style="font-size: 0.7rem; opacity: 0.8;">Rural Hybrid Systems</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#projek">Projek</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#infografik">Infografik</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#hubungi">Hubungi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <div class="hero-tag-dot">⚡</div>
+          <span>Solar Hibrid • BESS • EVCS</span>
+        </div>
+        <h1>
+          <span>Green Energy</span> untuk Komuniti<br />
+          Luar Bandar & Sekolah Pedalaman
+        </h1>
+        <p class="hero-subtitle">
+          Rekabentuk, data dan penyelenggaraan sistem solar hibrid, BESS dan tenaga bersih – berfokuskan
+          sekolah luar bandar, akses sukar dan komuniti pedalaman.
+        </p>
+        <div class="hero-actions">
+          <a href="#projek" class="btn-primary">Lihat Projek</a>
+          <a href="#dashboard" class="btn-outline">Buka Dashboard</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Fokus</span>
+            <span class="hero-meta-value">Solar Hibrid • BESS • EVCS</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Lokasi</span>
+            <span class="hero-meta-value">Pedalaman Sarawak & projek luar bandar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-panel">
+          <div class="hero-panel-header">
+            <div class="hero-panel-title">Rural Hybrid Energy Snapshot</div>
+            <div class="hero-panel-badge">Live Concept</div>
+          </div>
+          <div class="hero-kpi-grid">
+            <div class="hero-kpi-card">
+              <div class="hero-kpi-label">Total PV Capacity</div>
+              <div class="hero-kpi-value">XXX kWp</div>
+              <div class="hero-kpi-footnote">Gabungan beberapa sekolah luar bandar</div>
+            </div>
+            <div class="hero-kpi-card">
+              <div class="hero-kpi-label">Solar Fraction</div>
+              <div class="hero-kpi-value">XX %</div>
+              <div class="hero-kpi-footnote">Bahagian tenaga dipenuhi oleh PV</div>
+            </div>
+          </div>
+          <div class="hero-mini-chart"></div>
+          <div class="hero-panel-footer">
+            <div>
+              <span class="hero-status-dot"></span>
+              Data konsep berdasarkan projek sebenar
+            </div>
+            <div class="hero-pill">Dashboard Interaktif</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Fokus Utama</div>
+        <h2 class="section-title">Apa yang saya lakukan dalam dunia tenaga hijau</h2>
+        <p class="section-subtitle">
+          Gabungan rekabentuk sistem, analisis data dan penyelenggaraan untuk memastikan sistem solar hibrid
+          di kawasan pedalaman kekal stabil, selamat dan berkesan dalam jangka masa panjang.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🔧</div>
+          <div class="pillar-title">Rekabentuk & Integrasi Sistem Tenaga Hijau</div>
+          <div class="pillar-text">
+            Rekabentuk sistem solar hibrid, bank bateri (Li-ion / Lead-Acid), genset dan EV charger dengan
+            mengambil kira beban sebenar, profil cuaca, akses tapak dan piawaian JKR serta antarabangsa.
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">📊</div>
+          <div class="pillar-title">Analisis Data & Pemantauan Prestasi</div>
+          <div class="pillar-text">
+            Menterjemah data inverter, genset dan battery bank kepada dashboard – termasuk PV generation,
+            penggunaan diesel, solar fraction dan kecekapan sistem untuk setiap sekolah atau tapak.
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🛠️</div>
+          <div class="pillar-title">Penyelenggaraan & Kebolehselenggaraan</div>
+          <div class="pillar-text">
+            Pendekatan preventive dan predictive maintenance dengan SOP jelas, log penyelenggaraan, alarm
+            management dan kebolehsenggaraan untuk sistem di kawasan akses sukar.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / PROJEK TUMPUAN -->
+  <section id="projek">
+    <div class="section-inner">
+      <div class="two-col">
+        <div>
+          <div class="section-header">
+            <div class="section-kicker">Projek Solar & Green Energy</div>
+            <h2 class="section-title">Solar hibrid untuk sekolah luar bandar & komuniti pedalaman</h2>
+            <p class="section-subtitle">
+              Dari rekabentuk sehingga operasi – projek memberi fokus kepada kestabilan bekalan elektrik,
+              pengurangan diesel dan peningkatan kualiti hidup komuniti luar bandar.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">Projek Solar Hibrid – Sekolah Luar Bandar</div>
+            <div class="project-meta">
+              Contoh: SK Long Sait, Baram & beberapa sekolah pedalaman lain di Sarawak.
+            </div>
+            <div style="margin-bottom: 0.5rem; font-size: 0.86rem;">
+              • Kapasiti PV: ± XX–XX kWp<br />
+              • Bank bateri: konfigurasi Li-ion / Lead-Acid mengikut keperluan tapak<br />
+              • Genset: disepadukan sebagai backup terkawal mengikut SOC / DOD bateri<br />
+            </div>
+            <div class="project-tags">
+              <span class="tag">Solar Hibrid Off-Grid</span>
+              <span class="tag">Sekolah Pedalaman</span>
+              <span class="tag">Pengurangan Diesel</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">Konsep BESS & EVCS untuk Bangunan Kerajaan</div>
+            <div class="project-meta">
+              Rekabentuk awal BESS, EV charger dan integrasi dengan grid/sistem sedia ada.
+            </div>
+            <div style="font-size: 0.86rem;">
+              Meneliti aspek keselamatan (UL9540A, IEC 62619), keperluan ruang, penyejukan, dan integrasi
+              tenaga boleh baharu ke dalam operasi harian bangunan.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="badge-soft">Visual Projek</span>
+          <div style="
+              border-radius: 16px;
+              overflow: hidden;
+              background: radial-gradient(circle at top, #dbeafe 0, #0b4f6c 70%);
+              min-height: 220px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 1.1rem;
+            ">
+            <!-- Letak gambar sebenar nanti (drone view / tapak / sekolah) -->
+            <div style="text-align: center; color: #e5f4ff; font-size: 0.9rem;">
+              <div style="font-weight: 500; margin-bottom: 0.25rem;">Ruang untuk gambar projek sebenar</div>
+              <div>Contoh: drone view bumbung PV sekolah, bilik bateri, genset & persekitaran pedalaman.</div>
+            </div>
+          </div>
+          <div class="highlight-strip">
+            <div class="highlight-icon">🌞</div>
+            <div>
+              Setiap projek mempunyai cerita tersendiri – cabaran akses, cuaca, beban, dan keperluan
+              komuniti. Visual dan data digabungkan untuk memberi gambaran menyeluruh kepada semua pihak.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA & DASHBOARD -->
+  <section id="dashboard">
+    <div class="section-inner two-col">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">Data & Dashboard</div>
+          <h2 class="section-title">Dashboard interaktif untuk PV, genset & solar fraction</h2>
+          <p class="section-subtitle">
+            Data daripada inverter, genset dan bateri ditukar kepada insight yang mudah difahami melalui
+            dashboard interaktif – membantu membuat keputusan teknikal dan operasi dengan lebih yakin.
+          </p>
+        </div>
+
+        <ul class="info-list">
+          <li>
+            <div class="info-bullet"></div>
+            <div>Penjanaan harian PV (kWh/day), trend bulanan dan seasonal pattern.</div>
+          </li>
+          <li>
+            <div class="info-bullet"></div>
+            <div>Penggunaan genset, jimat diesel dan anggaran pengurangan emisi CO₂.</div>
+          </li>
+          <li>
+            <div class="info-bullet"></div>
+            <div>Solar fraction – bahagian tenaga yang berjaya dipenuhi oleh PV berbanding keseluruhan.</div>
+          </li>
+          <li>
+            <div class="info-bullet"></div>
+            <div>Perbandingan antara beberapa inverter / sekolah di bawah projek yang sama.</div>
+          </li>
+        </ul>
+
+        <div style="margin-top: 0.9rem;">
+          <a href="#hubungi" class="btn-primary">Saya berminat nak tahu lebih lanjut</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="dashboard-card">
+          <div style="font-size: 0.82rem; opacity: 0.9;">Sample Dashboard View</div>
+          <div style="font-size: 1rem; font-weight: 500; margin-top: 0.15rem;">
+            PV vs Genset – Daily Energy Mix
+          </div>
+          <div style="font-size: 0.76rem; opacity: 0.85; margin-top: 0.25rem;">
+            Konsep layout untuk embed Looker Studio / Google Sheets dashboard.
+          </div>
+          <div class="dashboard-chart">
+            <div class="chart-overlay-lines"></div>
+          </div>
+          <div class="dashboard-kpi-row">
+            <div class="dashboard-kpi">
+              <div class="dashboard-kpi-label">PV Energy (bulan ini)</div>
+              <div class="dashboard-kpi-value">XXX kWh</div>
+            </div>
+            <div class="dashboard-kpi">
+              <div class="dashboard-kpi-label">Diesel Saved (anggaran)</div>
+              <div class="dashboard-kpi-value">XXX liter</div>
+            </div>
+          </div>
+          <div style="margin-top: 0.7rem; font-size: 0.72rem; opacity: 0.85;">
+            *Di laman sebenar, card ini boleh diganti dengan embed dashboard interaktif daripada Looker
+            Studio atau platform analitik lain.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOGRAFIK & GALLERY -->
+  <section id="infografik">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Infografik & Gallery</div>
+        <h2 class="section-title">Cerita tenaga hijau melalui visual & momen di tapak</h2>
+        <p class="section-subtitle">
+          Infografik dan gambar lawatan tapak digunakan untuk menceritakan perjalanan projek – dari
+          perancangan, pemasangan, pengujian sehingga operasi harian di kawasan pedalaman.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="project-card">
+            <div class="project-title">Timeline 20 Tahun Projek Solar Hibrid</div>
+            <div style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Infografik menunjukkan evolusi teknologi, jenis bateri, kapasiti sistem dan kawasan liputan
+              sejak bermulanya inisiatif solar hibrid sehingga kini.
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-title">Infografik Operasi Sistem Solar Hibrid</div>
+            <div style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Visual ringkas bagaimana PV, inverter, bateri dan genset saling berinteraksi mengikut SOC,
+              DOD dan keperluan beban, termasuk peranan SPD, papan suis dan kawalan automasi.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="badge-soft">Ruang Gallery</span>
+          <div style="
+              border-radius: 16px;
+              overflow: hidden;
+              background: #ffffff;
+              border: 1px dashed #cbd2d9;
+              padding: 1.2rem;
+              min-height: 180px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              font-size: 0.86rem;
+              color: var(--text-muted);
+            ">
+            Di sini nanti boleh susun gambar:<br /><br />
+            • Lawatan ke sekolah pedalaman<br />
+            • Gambar drone PV rooftop / ground mount<br />
+            • Gambar bank bateri, genset & panel kawalan<br />
+            • Momen pelajar & guru menikmati kemudahan elektrik yang stabil
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KENAPA TENAGA HIJAU PENTING & QUOTE -->
+  <section id="tentang">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Kenapa Tenaga Hijau</div>
+        <h2 class="section-title">Tenaga boleh sampai ke mana-mana, jika direkabentuk dengan betul</h2>
+        <p class="section-subtitle">
+          Akses elektrik yang stabil ialah asas kepada pendidikan, kesihatan dan pembangunan komuniti.
+          Projek solar hibrid dan BESS membantu mengurangkan kebergantungan kepada diesel dan membuka
+          peluang baharu kepada pelajar, guru dan keluarga di kawasan pedalaman.
+        </p>
+      </div>
+
+      <div class="quote-block">
+        <div class="quote-mark">“</div>
+        <div>
+          Tenaga boleh sampai ke mana saja — asalkan rekabentuk tepat, penyelenggaraan konsisten dan
+          teknologi dimanfaatkan dengan bijak.
+        </div>
+        <div class="quote-author">– (Nama bro boleh letak di sini)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / HUBUNGI -->
+  <section id="hubungi" class="cta-section">
+    <div class="section-inner">
+      <div class="cta-box">
+        <div class="cta-title">Berminat untuk kolaborasi atau berbincang projek tenaga hijau?</div>
+        <div class="cta-text">
+          Jika anda terlibat dalam projek sekolah luar bandar, bangunan kerajaan, BESS, EVCS atau inisiatif
+          tenaga boleh baharu – saya terbuka untuk perbincangan, perkongsian pengalaman dan kerjasama.
+        </div>
+        <div class="cta-actions">
+          <!-- Tukar mailto ini ke email bro sendiri -->
+          <a href="mailto:youremail@example.com" class="btn-primary">Email Saya</a>
+          <a href="#projek" class="btn-outline" style="border-color: rgba(255,255,255,0.9);">
+            Lihat Projek
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Green Energy for Rural Future. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#tentang">Tentang</a>
+        <a href="#hubungi">Hubungi</a>
+      </div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
