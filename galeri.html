@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galeri Projek – Green Energy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --madani-blue: #0b4f6c;
+      --jkr-yellow: #ffcc00;
+      --energy-green: #1faa59;
+      --dark: #102a43;
+      --light-bg: #f5f7fa;
+      --text-main: #243b53;
+      --text-muted: #627d98;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      color: var(--text-main);
+      background: var(--light-bg);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 79, 108, 0.97);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--jkr-yellow), var(--energy-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--dark);
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      opacity: 0.85;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(circle at top left, #0f8ecf 0, #0b4f6c 42%, #061826 100%);
+      color: var(--white);
+      padding: 3.2rem 1.25rem 2.6rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #bef8fd;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title span {
+      color: var(--jkr-yellow);
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      max-width: 680px;
+      color: rgba(226, 240, 255, 0.9);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 2.6rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 1.6rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--energy-green);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    /* GALLERY GRID */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-item {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #d8e2ec;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      min-height: 210px;
+    }
+
+    .gallery-placeholder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, #e0f4ff, #cde8ff);
+      font-size: 0.86rem;
+      color: #425872;
+      text-align: center;
+    }
+
+    .gallery-caption {
+      padding: 0.75rem 0.9rem 0.9rem;
+      font-size: 0.84rem;
+      border-top: 1px solid #d8e2ec;
+      background: #f8fafc;
+      color: var(--text-muted);
+    }
+
+    .gallery-caption strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 0.15rem;
+      font-size: 0.86rem;
+    }
+
+    .info-note {
+      margin-top: 1.1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: rgba(11, 79, 108, 0.04);
+      border-radius: 10px;
+      padding: 0.7rem 0.8rem;
+      border: 1px dashed #cbd2d9;
+    }
+
+    footer {
+      padding: 1.4rem 1.25rem 1.6rem;
+      background: #0b1727;
+      color: rgba(226, 232, 240, 0.8);
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(226, 232, 240, 0.86);
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      header {
+        position: static;
+      }
+
+      .hero-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-mark">GE</div>
+        <div>
+          <div style="font-size: 0.9rem;">Green Energy</div>
+          <div class="logo-sub">Rural Hybrid Systems</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projek.html">Projek</a></li>
+          <li><a href="index.html#dashboard">Dashboard</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="index.html#hubungi">Hubungi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-kicker">Galeri</div>
+      <h1 class="hero-title">
+        <span>Galeri Projek & Lawatan Tapak</span>
+      </h1>
+      <p class="hero-subtitle">
+        Koleksi visual yang merakam suasana sekolah pedalaman, pemasangan sistem solar hibrid, bilik bateri,
+        genset, EV charger dan momen bersama komuniti di kawasan luar bandar.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Momen di Lapangan</div>
+        <h2 class="section-title">Suasana sebenar di tapak projek</h2>
+        <p class="section-subtitle">
+          Setiap gambar boleh membawa cerita – tentang cabaran akses, cuaca, logistik dan kepuasan apabila
+          sistem berjaya memberikan bekalan elektrik yang stabil kepada komuniti.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- NANTI KITA GANTI PLACEHOLDER NI DENGAN IMG SEBENAR -->
+
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            Ruang untuk gambar: <br /><br />
+            Drone view bumbung PV di sekolah pedalaman<br />
+            (contoh: SK Long Sait / sekolah lain)
+          </div>
+          <div class="gallery-caption">
+            <strong>Drone view PV rooftop</strong>
+            Gambaran menyeluruh susun atur modul PV, keadaan bumbung dan persekitaran sekolah di pedalaman.
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            Ruang untuk gambar:<br /><br />
+            Bilik bateri / bank bateri Li-ion atau Lead-Acid<br />
+            lengkap dengan pemasangan rak & perlindungan.
+          </div>
+          <div class="gallery-caption">
+            <strong>Bilik bateri & sistem simpanan tenaga</strong>
+            Menunjukkan konfigurasi bank bateri, kemasan kabel, laluan udara dan aspek keselamatan di tapak.
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            Ruang untuk gambar:<br /><br />
+            Genset & papan suis utama (MCC)<br />
+            yang disepadukan dengan sistem solar hibrid.
+          </div>
+          <div class="gallery-caption">
+            <strong>Genset & panel kawalan</strong>
+            Integrasi antara genset dan sistem solar hibrid untuk memastikan bekalan berterusan ketika cuaca
+            tidak mengizinkan.
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            Ruang untuk gambar:<br /><br />
+            Murid & guru menggunakan kemudahan di sekolah<br />
+            selepas ada elektrik yang lebih stabil.
+          </div>
+          <div class="gallery-caption">
+            <strong>Komuniti & pengguna akhir</strong>
+            Momen yang menggambarkan impak sebenar projek – pelajar dan guru mendapat manfaat akses tenaga
+            yang lebih boleh diharap.
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            Ruang untuk gambar:<br /><br />
+            Perjalanan ke tapak – sungai, laluan balak,<br />
+            bot panjang, 4x4 dan sebagainya.
+          </div>
+          <div class="gallery-caption">
+            <strong>Perjalanan ke tapak projek</strong>
+            Visual yang menceritakan cabaran logistik dan komitmen pasukan untuk sampai ke lokasi terpencil.
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            Ruang untuk gambar:<br /><br />
+            EV charger, dashboard monitoring,<br />
+            atau BESS di bangunan kerajaan.
+          </div>
+          <div class="gallery-caption">
+            <strong>Teknologi sokongan lain</strong>
+            Contoh pemasangan EVCS, BESS atau sistem pemantauan yang berkaitan dengan inisiatif tenaga hijau.
+          </div>
+        </div>
+      </div>
+
+      <div class="info-note">
+        <strong>Nota:</strong> Apabila gambar sebenar sedia, setiap kotak ini boleh digantikan dengan
+        tag <code>&lt;img src="nama-gambar.jpg" alt="..." /&gt;</code> dan kapsyen yang lebih spesifik
+        mengikut nama projek atau lokasi (contoh: SK Long Sait, SK Long Luteng, dan lain-lain).
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Green Energy for Rural Future. Galeri projek.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projek.html">Projek</a>
+        <a href="index.html#hubungi">Hubungi</a>
+      </div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
